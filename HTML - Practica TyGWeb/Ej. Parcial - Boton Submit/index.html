@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mi formulario</title>
+  <script src="script.js"></script>
+</head>
+<body>
+  <!-- Resto de tu contenido HTML -->
+  <form id="miFormulario" onsubmit="return validarFormulario(event)">
+    <input type="text" id="nombre" placeholder="Nombre" required>
+    <button type="submit" id="botonSubmit">Enviar</button>
+  </form>
+  
+  <div id="error"></div>
+  <div id="mensaje"></div>
+</body>
+</html>
+  

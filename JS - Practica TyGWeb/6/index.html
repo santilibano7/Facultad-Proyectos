@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "­//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1­transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http­equiv="Content­Type" content="text/html; charset=iso­8859­1" />
+<title>Ejercicio 11 ­ DOM b
+sico</title>
+<script type="text/javascript">
+    window.onload = function() {
+        // Numero de enlaces de la pagina:
+        var enlaces = document.getElementsByTagName("a");
+        // Direccion del penultimo enlace
+        document.addEventListener('DOMContentLoaded', function() {
+            if (enlaces.length >= 2) {
+                var penultimoEnlace = enlaces[enlaces.length - 2];
+                var direccionPenultimoEnlace = penultimoEnlace.href;
+                console.log('Dirección del penúltimo enlace:', direccionPenultimoEnlace);
+            } else {
+                console.log('No se encontraron suficientes enlaces.');
+            }
+        });
+
+        // Numero de enlaces que apuntan a http://prueba
+        let contadorEnlaces = 0;
+        enlaces.forEach(function(enlace) {
+            if (enlace.href === 'http://prueba') {
+                contadorEnlaces++;
+            }
+        });
+
+        // Numero de enlaces del tercer parrafo
+        var parrafos = document.getElementsByTagName('p');
+        var tercerParrafo = parrafos[2];
+        var enlaces = tercerParrafo.getElementsByTagName('a');
+        var numeroEnlaces = enlaces.length;
+        console.log('Número de enlaces del tercer párrafo:', numeroEnlaces);
+
+    }
+    </script>
+</head>

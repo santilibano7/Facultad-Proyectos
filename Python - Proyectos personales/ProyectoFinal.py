@@ -12,6 +12,12 @@ class Contacto:
         self.numero = numero
         self.categoria = categoria
 
+def exit():
+    #Reiniciar app
+    tiempo=input("Presione cualquier tecla para salir.\n")
+    os.system ("cls")        
+    app()
+
 def crear_directorio():
     if not os.path.exists("contactos/"):    #Si una carpeta no existe entonces...
         os.makedirs("contactos/")   #Crear la carpeta
@@ -62,9 +68,7 @@ def agregar_contacto():
         print("Ya existe un contacto con ese nombre\n")
 
     #Reiniciar app
-    tiempo=input("Presione cualquier tecla para salir.\n")
-    os.system ("cls")        
-    app()
+    exit()
 
 def editar_contacto():
     nombre_anterior = input("Ingrese el nombre del contacto a editar:\r\n")
@@ -105,11 +109,7 @@ def editar_contacto():
                 print("Opcion incorrecta.\n")
     else:
         print("Lo sentimos, el contacto ingresado no existe en la agenda\n")
-    
-    #Reiniciar app
-    tiempo=input("Presione cualquier tecla para salir.\n")
-    os.system ("cls")        
-    app()
+    exit()
 
 def ver_contactos():
     archivos = os.listdir(CARPETA)   #listdir(ruta) nos permite listar los archivos de un directorio
@@ -122,10 +122,7 @@ def ver_contactos():
             #Imprime un separador entre contactos
             print("\r\n")
     
-    #Reiniciar app
-    tiempo=input("Presione cualquier tecla para salir.\n")
-    os.system ("cls")        
-    app()
+    exit()
 
 def buscar_contacto():
     nombre = input("Ingrese el nombre del contacto a buscar:\r\n")
@@ -165,10 +162,7 @@ def buscar_contacto():
     else:
         print("El contacto ingresado no existe.\r\n")
     
-    #Reiniciar app
-    tiempo=input("Presione cualquier tecla para salir.\n")
-    os.system ("cls")        
-    app()
+    exit()
 
 def eliminar_contacto():
     nombre = input("Ingrese el nombre del contacto a buscar:\r\n")
@@ -206,10 +200,7 @@ def eliminar_contacto():
     else:
         print("No existe ningún contacto con ese nombre, inténtelo nuevamente.\n\r")
 
-    #Reiniciar app
-    tiempo=input("Presione cualquier tecla para salir.\n")
-    os.system ("cls")        
-    app()
+    exit()
 
 def existe_contacto(nombre):
     return os.path.isfile(CARPETA + nombre + EXTENSION)
